@@ -1,0 +1,23 @@
+{
+  "name": "linked-list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "dev": "node index.js"
+  },
+  "keywords": [
+    "TDD",
+    "Test Driven Development",
+    "Testing",
+    "Jest",
+    "Linked-List",
+    "Data Structures"
+  ],
+  "author": "DanielBGC",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.6.1"
+  }
+}
