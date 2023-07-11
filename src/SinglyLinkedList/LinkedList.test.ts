@@ -1,4 +1,4 @@
-const LinkedList = require('./LinkedList')
+import LinkedList from './LinkedList';
 
 describe('#insertAtHead', () => {
   test('it adds the element to the beginning of the list', () => {
@@ -7,8 +7,8 @@ describe('#insertAtHead', () => {
     const oldHead = ll.head;
     ll.insertAtHead(2);
 
-    expect(ll.head.value).toBe(2);
-    expect(ll.head.next).toBe(oldHead);
+    expect(ll.head!.value).toBe(2);
+    expect(ll.head!.next).toBe(oldHead);
     expect(ll.length).toBe(2);
   });
 });
@@ -34,7 +34,7 @@ describe('#getByIndex', () => {
     test('it returns the head', () => {
       const ll = LinkedList.createListFromArray([1, 2]);
 
-      expect(ll.getByIndex(0).value).toBe(1);
+      expect(ll.getByIndex(0)!.value).toBe(1);
     });
   });
 
@@ -42,7 +42,7 @@ describe('#getByIndex', () => {
     test('it returns the element at that index', () => {
       const ll = LinkedList.createListFromArray([1, 2, 3, 4]);
 
-      expect(ll.getByIndex(2).value).toBe(3);
+      expect(ll.getByIndex(2)!.value).toBe(3);
     });
   });
 })
@@ -71,8 +71,8 @@ describe('#insertAtIndex', () => {
       const ll = LinkedList.createListFromArray([1, 2]);
       ll.insertAtIndex(0, 3);
 
-      expect(ll.head.value).toBe(3);
-      expect(ll.head.next.value).toBe(1);
+      expect(ll.head!.value).toBe(3);
+      expect(ll.head!.next!.value).toBe(1);
       expect(ll.length).toBe(3);
     });
   });
@@ -83,8 +83,8 @@ describe('#insertAtIndex', () => {
       ll.insertAtIndex(2, 5);
       const node = ll.getByIndex(2);
 
-      expect(node.value).toBe(5);
-      expect(node.next.value).toBe(3);
+      expect(node!.value).toBe(5);
+      expect(node!.next!.value).toBe(3);
       expect(ll.length).toBe(5);
     });
   });
@@ -95,7 +95,7 @@ describe('#removeHead', () => {
     const ll = LinkedList.createListFromArray([1, 2, 3]);
     ll.removeHead();
 
-    expect(ll.head.value).toBe(2);
+    expect(ll.head!.value).toBe(2);
     expect(ll.length).toBe(2);
   });
 });
@@ -106,7 +106,7 @@ describe('#removeAtIndex', () => {
       const ll = LinkedList.createListFromArray([1, 2]);
       ll.removeAtIndex(-1);
       
-      expect(ll.head.value).toBe(1);
+      expect(ll.head!.value).toBe(1);
       expect(ll.length).toBe(2);
     });
   });
@@ -116,7 +116,7 @@ describe('#removeAtIndex', () => {
       const ll = LinkedList.createListFromArray([1, 2]);
       ll.removeAtIndex(-1);
       
-      expect(ll.head.value).toBe(1);
+      expect(ll.head!.value).toBe(1);
       expect(ll.length).toBe(2);
     });
   });
@@ -126,8 +126,8 @@ describe('#removeAtIndex', () => {
       const ll = LinkedList.createListFromArray([1, 2, 3]);
       ll.removeAtIndex(0);
 
-      expect(ll.head.value).toBe(2);
-      expect(ll.head.next.value).toBe(3);
+      expect(ll.head!.value).toBe(2);
+      expect(ll.head!.next!.value).toBe(3);
       expect(ll.length).toBe(2);
     })
   })
@@ -138,8 +138,8 @@ describe('#removeAtIndex', () => {
       ll.removeAtIndex(2);
       const node = ll.getByIndex(1);
 
-      expect(node.value).toBe(2);
-      expect(node.next.value).toBe(4);
+      expect(node!.value).toBe(2);
+      expect(node!.next!.value).toBe(4);
       expect(ll.length).toBe(3);
     })
   })
